@@ -7,6 +7,7 @@ __pycache__/
 .venv/
 .pytest_cache/
 .ruff_cache/
+dist/
 data/*.duckdb
 data/**/*.parquet
 data/synthetic-check/

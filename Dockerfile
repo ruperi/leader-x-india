@@ -9,11 +9,11 @@ WORKDIR /app
 
 COPY --from=ghcr.io/astral-sh/uv:0.12.10 /uv /uvx /bin/
 COPY pyproject.toml uv.lock README.md ./
-RUN uv sync --frozen --no-dev
-
 COPY src ./src
 COPY scripts ./scripts
 COPY app.py ./app.py
+
+RUN uv sync --frozen --no-dev
 
 RUN uv run python -m leader_x.synthetic --output-dir data/synthetic --database data/leader_x.duckdb
 
